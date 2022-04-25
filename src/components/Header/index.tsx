@@ -31,7 +31,8 @@ export const Header = () => {
   return (
     <header className={styles.container}>
       <div className={styles.content}>
-        <img src="/logo.png" alt="Blizzard" />
+        <img src="/logo.png" alt="Logo da Blizzard" />
+
         <nav>
           <ul className={styles.navigation}>
             <li className={activeNavItem === 'games' ? styles.active : ''}>
@@ -48,8 +49,9 @@ export const Header = () => {
             </li>
             <li className={activeNavItem === 'e-sports' ? styles.active : ''}>
               <span onClick={() => handleActiveNavItem('e-sports')}>
-                E-Sports <IconArrowDown />
+                E-sportes <IconArrowDown />
               </span>
+
               <ul className={styles.dropdown}>
                 {Sports.map(sport => (
                   <li key={sport} className={styles.dropdown__item}>
@@ -58,16 +60,15 @@ export const Header = () => {
                 ))}
               </ul>
             </li>
-            <li>
-              <li>Loja</li>
-              <li>Notícias</li>
-              <li>Suporte</li>
-            </li>
+            <li>Loja</li>
+            <li>Notícias</li>
+            <li>Suporte </li>
           </ul>
         </nav>
+
         <div className={styles.buttons}>
           <button type="button">Criar conta</button>
-          <button type="button">Entrar</button>
+          <button type="button">Logar</button>
         </div>
       </div>
     </header>
