@@ -1,27 +1,75 @@
+import { useState } from 'react'
 import { IconArrowDown } from 'static'
 import styles from './styles.module.scss'
 
-export const Header = () => (
-  <header className={styles.container}>
-    <div className={styles.content}>
-      <img src="/logo.png" alt="logo Blizzard" />
-      <nav>
-        <ul className={styles.navigation}>
-          <li>
-            Jogos <IconArrowDown />
-          </li>
-          <li>
-            Esportes <IconArrowDown />{' '}
-          </li>
-          <li>Loja</li>
-          <li>Notícias</li>
-          <li>Suporte</li>
-        </ul>
-      </nav>
-      <div className={styles.buttons}>
-        <button type="button">Criar conta</button>
-        <button type="button"> logar</button>
+const Games = [
+  'COD:Warzone',
+  'Diablo',
+  'Starcraft',
+  'Overwatch',
+  'World of Warcraft'
+]
+
+const Sports = [
+  'Copa Mundial de Overwatch',
+  'Liga De Overwatch',
+  'Hearthstone Masters',
+  'StarCratf II Wcs',
+  'Campeonato Mundial de Arean World of Warcraft'
+]
+
+type NavItemKeyProps = 'games' | 'e-sports' | ''
+
+export const Header = () => {
+  const [activeNavItem, setActiveNavItem] = useState<NavItemKeyProps>('')
+
+  const handleActiveNavItem = (navItemKey: NavItemKeyProps): void => {
+    const isClose = navItemKey === activeNavItem
+    setActiveNavItem(isClose ? '' : navItemKey)
+  }
+
+  return (
+    <header className={styles.container}>
+      <div className={styles.content}>
+        <img src="/logo.png" alt="Blizzard" />
+        <nav>
+          <ul className={styles.navigation}>
+            <li className={activeNavItem === 'games' ? styles.active : ''}>
+              <span onClick={() => handleActiveNavItem('games')}>
+                Jogos <IconArrowDown />
+              </span>
+              <ul className={styles.dropdown}>
+                {Games.map(game => (
+                  <li key={game} className={styles.dropdown__item}>
+                    {game}
+                  </li>
+                ))}
+              </ul>
+            </li>
+            <li className={activeNavItem === 'e-sports' ? styles.active : ''}>
+              <span onClick={() => handleActiveNavItem('e-sports')}>
+                E-Sports <IconArrowDown />
+              </span>
+              <ul className={styles.dropdown}>
+                {Sports.map(sport => (
+                  <li key={sport} className={styles.dropdown__item}>
+                    {sport}
+                  </li>
+                ))}
+              </ul>
+            </li>
+            <li>
+              <li>Loja</li>
+              <li>Notícias</li>
+              <li>Suporte</li>
+            </li>
+          </ul>
+        </nav>
+        <div className={styles.buttons}>
+          <button type="button">Criar conta</button>
+          <button type="button">Entrar</button>
+        </div>
       </div>
-    </div>
-  </header>
-)
+    </header>
+  )
+}
