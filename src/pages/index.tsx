@@ -1,4 +1,5 @@
 import { Banner } from 'components/Banner'
+import { Download } from 'components/Download'
 import { Games } from 'components/Games'
 import Head from 'next/head'
 
@@ -12,6 +13,7 @@ export default function Home() {
       </Head>
       <Banner />
       <Games />
+      <Download />
     </>
   )
 }
