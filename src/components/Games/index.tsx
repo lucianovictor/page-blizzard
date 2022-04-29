@@ -9,6 +9,7 @@ import {
   IconXbox
 } from 'static'
 
+import games from 'data/games.json'
 export const Games = () => (
   <section className={styles.container}>
     <div>
@@ -29,6 +30,16 @@ export const Games = () => (
             Ver todos jogos
           </a>
         </Link>
+      </div>
+      <div className={styles.games}>
+        {games.map(game => (
+          <div className={styles.game} key={game.name}>
+            <span />
+            <img src={game.image} alt="" />
+            <strong>{game.name}</strong>
+            <p>{game.category}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
