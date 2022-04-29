@@ -1,4 +1,3 @@
-import styles from './styles.module.scss'
 import Link from 'next/link'
 
 import {
@@ -6,10 +5,14 @@ import {
   IconLink,
   IconNintendo,
   IconPlaystation,
+  IconPoints,
   IconXbox
 } from 'static'
 
 import games from 'data/games.json'
+
+import styles from './styles.module.scss'
+
 export const Games = () => (
   <section className={styles.container}>
     <div>
@@ -20,8 +23,8 @@ export const Games = () => (
         <div className={styles.platforms}>
           <IconBattleNet />
           <IconNintendo />
-          <IconPlaystation />
           <IconXbox />
+          <IconPlaystation />
         </div>
 
         <Link href="/games">
@@ -31,15 +34,24 @@ export const Games = () => (
           </a>
         </Link>
       </div>
+
       <div className={styles.games}>
         {games.map(game => (
           <div className={styles.game} key={game.name}>
-            <span />
-            <img src={game.image} alt="" />
+            <span>
+              <img src={game.image} alt={`Imagem do jogo ${game.name}`} />
+            </span>
             <strong>{game.name}</strong>
             <p>{game.category}</p>
           </div>
         ))}
+        <div className={styles['all-games']}>
+          <img src="/logo.png" alt="Blizzard logo" />
+          <a href="">
+            <IconPoints />
+            Ver todos os jogos
+          </a>
+        </div>
       </div>
     </div>
   </section>

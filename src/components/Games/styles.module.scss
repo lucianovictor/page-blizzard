@@ -1,36 +1,44 @@
+
 .container {
   display: flex;
-  margin-top: 85px;
   width: 100%;
 
+  margin-top: 85px;
+
   > div {
+    width: 100%;
+    max-width: 1266px;
+
+    margin: 0 auto;
+
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    width: 100%;
-    max-width: 1266px;
-    margin: 0 auto;
   }
 }
 
 .content {
-  display:flex;
+  display: flex;
   align-items: flex-end;
+
   margin-bottom: 82px;
 
   small {
     font-size: 1rem;
     line-height: 1.375rem;
     font-weight: 600;
-    margin-right: 170px;
-    align-self: flex-start;
-    color: var(--secondary);
     text-transform: uppercase;
+    color: var(--secondary);
+
+    margin-right: 170px;
+
+    align-self: flex-start;
   }
 
   h2 {
     font-size: 2rem;
     line-height: 2.25rem;
+
     width: 100%;
     max-width: 175px;
   }
@@ -38,9 +46,10 @@
   .platforms {
     display: flex;
     align-items: center;
+    column-gap: 24px;
+
     margin-left: 170px;
     margin-right: auto;
-    column-gap: 24px;
 
     svg {
       width: 1.375rem;
@@ -50,12 +59,13 @@
 
   a {
     display: flex;
+    align-items: center;
+    column-gap: 10px;
+
+    color: var(--link);
     font-size: 1rem;
     line-height: 1.5rem;
     font-weight: 600;
-    column-gap: 10px;
-    color: var(--link);
-    align-items: center;
 
     svg {
       width: 0.625rem;
@@ -82,23 +92,55 @@
     img {
       width: 100%;
       height: 100%;
+      border-radius: 2px;
+
       object-fit: cover;
     }
   }
 
   strong {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     line-height: 1.875rem;
-    font-weight: 600;
     color: var(--tertiary);
+    font-weight: 600;
+
     margin: 18px 0 4px;
   }
 
   p {
     font-size: 1rem;
     line-height: 1.375rem;
-    font-weight: 400;
     color: var(--tertiary);
   }
 }
 
+.all-games {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 36px;
+  max-height: 422px;
+  align-items: center;
+  border: 1px solid #212428;
+  border-radius: 4px;
+
+  img {
+    width: 94px;
+    height: auto;
+  }
+
+  a {
+    display: flex;
+    font-size: 1.125rem;
+    line-height: 1.625rem;
+    font-weight: 600;
+    align-items: center;
+    column-gap: 12px;
+
+    svg {
+      color: #c4c4c4;
+      width: 10px;
+      height: 10px;
+    }
+  }
+}
