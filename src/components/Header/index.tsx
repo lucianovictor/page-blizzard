@@ -3,18 +3,24 @@ import { IconArrowDown } from 'static'
 import styles from './styles.module.scss'
 
 const Games = [
-  'COD:Warzone',
-  'Diablo',
-  'Starcraft',
+  'Diablo II: Resurrected',
   'Overwatch',
-  'World of Warcraft'
+  'Overwatch 2',
+  'World of Warcraft Classic',
+  'Hearthstone',
+  'Heroes of storm'
+  // 'Diablo IV',
+  // 'Warcraft III Reforged',
+  // 'Diablo III',
+  // 'StarCraft II',
+  // 'StarCraft Remastered'
 ]
 
 const Sports = [
   'Copa Mundial de Overwatch',
   'Liga De Overwatch',
   'Hearthstone Masters',
-  'StarCratf II Wcs',
+  'StarCratf II WCS',
   'Campeonato Mundial de Arean World of Warcraft'
 ]
 
